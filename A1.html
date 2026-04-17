@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSIT128 Assignment 1</title>
+    <style>
+        body{
+            min-height: 2000px;
+        }
+        table {
+            width: 700px;
+            border-collapse: collapse;
+            /* 合并边框，使其变成单线 */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        td {
+            border: 1px solid #666;
+            /* 设置单元格边框颜色 */
+            padding: 10px;
+            vertical-align: middle;
+            /* 内容垂直居中 */
+        }
+
+        /* 模拟图片中第一行和第二列的灰色背景 */
+        .header-row td {
+            background-color: #e0e0e0;
+            text-align: center;
+            /* 文字居中 */
+            font-weight: bold;
+        }
+
+        /* 第一列文字左对齐 */
+        .left-align {
+            text-align: left;
+            width: 150px;
+        }
+        .code-container{
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        #CPP{
+            width: 100px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h2>Part 1</h2>
+    <table>
+        <!-- 第一行：标题行 -->
+        <tr class="header-row">
+            <!-- 左侧大标题，横跨前3列 -->
+            <td colspan="3">CSIT128: Assignment 1</td>
+            <!-- 右侧小组号，占第4列 -->
+            <td>Group</td>
+        </tr>
+
+        <!-- 第二行 -->
+        <tr>
+            <td rowspan="2" class="left-align">Student Number / Name / Email</td>
+
+            <td>UOW ID 1</td>
+            <td>Name 1</td> 
+            <td>Name1@something.com</td>
+        </tr>
+
+        <!-- 第三行 -->
+        <tr>
+            <td>UOW ID 2</td>
+            <td>Name 2</td>
+            <td>Name2@something.com</td>
+        </tr>
+    </table>
+    <h2>Part 2:Hello World program in different languages</h2>
+    <ul>
+        <li><a href="#CPP">C++</a></li>
+        <li><a href="#C#">C#</a></li>
+        <li><a href="#Python">Python</a></li>
+        <li><a href="#HTML">HTML</a></li>
+    </ul>
+    <hr>
+    <p id="CPP">C++</p>
+    <div class="code-container">
+        <img id="CPP" src="CSIT128-Y202603-A1/CPP.jpg" alt="">
+            <div class="code-text">
+                    <pre>
+    #include <iostream>
+            
+    void main() {
+            cout << "Hello World!" << endl; 
+        }
+                    </pre>
+            </div>
+    </div>
+    <hr>
+    <p id="C#">C#</p>
+    <div class="code-container">
+        <img id="CS" src="CSIT128-Y202603-A1/CS.png" alt="">
+        <div class="code-text">
+            <pre>
+        using System;
+        
+        class Program
+        {
+                static void Main()
+                {
+                        Console.WriteLine("Hello, World!");
+                }
+        }
+            </pre>
+        </div>
+    </div>
+    <hr>
+    <p id="Python">Python</p>
+    <div class="code-container">
+        <img id="python" src="CSIT128-Y202603-A1/python.jpg" alt="">
+        <div class="code-text">
+            <pre>
+        # Hello World program in Python
+        
+        print("Hello World!")
+                        </pre>
+        </div>
+    </div>
+    <hr>
+    <p id="HTML">HTML</p>
+    <div class="code-container">
+        <img id="HTML" src="CSIT128-Y202603-A1/HTML.png" alt="">
+        <div class="code-text">
+            <pre>
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;title&gt;Hello&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    Hello World!
+    &lt;/body&gt;
+    &lt;/html&gt;
+            </pre>
+        </div>
+    </div>
+</body>
+
+</html>
