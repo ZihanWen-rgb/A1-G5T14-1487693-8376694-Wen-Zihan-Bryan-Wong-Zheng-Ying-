@@ -2,7 +2,7 @@
 <html lang="EN">
   <head>
     <meta charset="UTF-8" />
-    <title>CSIT128 Assignment 1</title>
+    <title>A1-G5T14-1487693,8376694(Wen,Zihan,Bryan Wong ZhengYing)</title>
     <style>
       body {
         min-height: 2000px;
@@ -11,28 +11,22 @@
       #part1table {
         width: 700px;
         border-collapse: collapse;
-        /* 合并边框，使其变成单线 */
         font-family: Arial, sans-serif;
         margin: 20px;
       }
 
       td {
         border: 1px solid #666;
-        /* 设置单元格边框颜色 */
         padding: 10px;
         vertical-align: middle;
-        /* 内容垂直居中 */
       }
 
-      /* 模拟图片中第一行和第二列的灰色背景 */
       .header-row td {
         background-color: #e0e0e0;
         text-align: center;
-        /* 文字居中 */
         font-weight: bold;
       }
 
-      /* 第一列文字左对齐 */
       .left-align {
         text-align: left;
         width: 150px;
@@ -48,16 +42,12 @@
         width: 130px;
       }
 
-      /* --- Part 3 Specific Styles --- */
-
-      /* 联系人表格样式（用于展示顾问信息） */
       .contact-table {
         margin: 10px 0;
         width: 400px;
         margin-left: 20px;
       }
 
-      /* 链接颜色（通常为蓝色） */
       .part3-container a {
         color: #0066cc;
         text-decoration: underline;
@@ -90,30 +80,29 @@
   <body>
     <h2>Part 1</h2>
     <table id="part1table">
-      <!-- 第一行：标题行 -->
       <tr class="header-row">
-        <!-- 左侧大标题，横跨前3列 -->
+        <!-- row 1 -->
         <td colspan="3">CSIT128: Assignment 1</td>
-        <!-- 右侧小组号，占第4列 -->
         <td>Group</td>
       </tr>
 
-      <!-- 第二行 -->
+      <!-- row 2 -->
       <tr>
         <td rowspan="2" class="left-align">Student Number / Name / Email</td>
 
-        <td>UOW ID 1</td>
-        <td>Name 1</td>
-        <td>Name1@something.com</td>
+        <td>1487693</td>
+        <td>Wen,zihan</td>
+        <td>zw927@uowmail.edu.au</td>
       </tr>
 
-      <!-- 第三行 -->
+      <!-- row 3 -->
       <tr>
-        <td>UOW ID 2</td>
-        <td>Name 2</td>
-        <td>Name2@something.com</td>
+        <td>8376694</td>
+        <td>Bryan Wong Zheng Ying</td>
+        <td>bzyw329@uowmail.edu.au</td>
       </tr>
     </table>
+    <!-- Part 2 -->
     <h2>Part 2:Hello World program in different languages</h2>
     <ul>
       <li><a href="#CPP">C++</a></li>
@@ -132,8 +121,7 @@
         void main() {
                 cout << "Hello World!" << endl; 
             }
-                </pre
-        >
+        </pre>
       </div>
     </div>
     <hr />
@@ -186,7 +174,7 @@
         >
       </div>
     </div>
-
+    <!-- Part 3 -->
     <div class="part3-container">
       <!-- 主标题 -->
       <h2>Part 3: University policies and services</h2>
@@ -298,10 +286,9 @@
         </p>
       </div>
     </div>
+    <!-- Part 4 -->
     <div>
       <h2>Part 4: Form Validation and Interaction</h2>
-
-      <!-- 表单包裹在表格中 -->
       <form id="mainForm" action="https://translate.google.com" method="get" target="_blank" onsubmit="return validateForm();">
         <table id="part4table" border="1">
           <!-- Row 1: Name -->
@@ -388,14 +375,10 @@
       </form>
 
       <script>
-        // 1. 页面加载完成后执行
-        window.onload = function () {
-          // 设置当前日期和时间
+        window.onload = function () { 
           displayCurrentDate();
         };
 
-        // 2. 显示日期函数
-        // 格式要求：8 April 2026 Wednesday 1:47 PM
         function displayCurrentDate() {
           const now = new Date();
           const options = {
@@ -407,8 +390,8 @@
             minute: "numeric",
             hour12: true,
           };
-          // toLocaleString 默认会根据系统语言变化，这里直接拼接字符串以确保格式
-          // 如果需要严格符合 "8 April 2026 Wednesday 1:47 PM" 的格式，手动拼接更稳妥
+          
+        
           const day = now.getDate();
           const month = now.toLocaleString("default", { month: "long" });
           const year = now.getFullYear();
@@ -422,7 +405,7 @@
             `${day} ${month} ${year} ${weekday} ${timeStr}`;
         }
 
-        // 3. Find and Replace 功能
+        // find and replace
         function findAndReplace() {
           const messageBox = document.getElementById("message");
           const findText = document.getElementById("findText").value;
@@ -435,13 +418,10 @@
             return;
           }
 
-          // 计算匹配次数
-          // g 标志表示全局搜索，i 表示忽略大小写
           const regex = new RegExp(findText, "gi");
           const matches = messageBox.value.match(regex);
           const count = matches ? matches.length : 0;
 
-          // 执行替换
           if (count > 0) {
             messageBox.value = messageBox.value.replace(regex, replaceText);
             resultSpan.textContent = `Replaced ${count} occurrence(s).`;
@@ -452,23 +432,23 @@
           }
         }
 
-        // 4. Toggle Replace Box (根据 Find 是否为空来禁用 Replace)
+        // Toggle Replace Box
         function toggleReplaceBox() {
           const findBox = document.getElementById("findText");
           const replaceBox = document.getElementById("replaceText");
           replaceBox.disabled = findBox.value === "";
         }
 
-        // 5. 表单验证 (Validate Form)
-        // onsubmit 事件触发
+        // Validate Form
+        
         function validateForm() {
           let isValid = true;
-          // 清除之前的错误信息
+          
           document.getElementById("nameError").textContent = "";
           document.getElementById("moduleError").textContent = "";
           document.getElementById("messageError").textContent = "";
 
-          // Name 验证：不能为空，且只能包含字母、数字和空格
+          // Check Name：不能为空，且只能包含字母、数字和空格
           const name = document.getElementById("name").value.trim();
           const nameRegex = /^[a-zA-Z0-9\s]+$/;
           if (name === "") {
@@ -481,17 +461,8 @@
             isValid = false;
           }
 
-          // Module Code 验证：4个大写字母 + 3个数字(4-8)
-          // 题目要求：4个大写字母，后跟3位数字（范围4到8，包含两端）
-          // 注意：这里的数字范围4-8是指数字字符只能是4,5,6,7,8
           const module = document.getElementById("moduleCode").value;
-          // 如果为空，根据要求“can be empty”，所以跳过验证
           if (module !== "") {
-            // 正则解释：
-            // ^ : 开始
-            // [A-Z]{4} : 4个大写字母
-            // [4-8]{3} : 3个数字，范围4到8
-            // $ : 结束
             const moduleRegex = /^[A-Z]{4}[4-8]{3}$/;
             if (!moduleRegex.test(module)) {
               document.getElementById("moduleError").textContent =
@@ -511,13 +482,12 @@
           return isValid;
         }
 
-        // 6. Reset 功能 (额外的清理)
+        // Reset
         function resetForm() {
-          // 表单的 reset 事件会自动重置表单元素
-          // 这里可以处理一些额外的逻辑，比如清除结果信息
+          
           setTimeout(() => {
             document.getElementById("replaceResult").textContent = "";
-            // 重置日期（因为 readonly 字段在某些浏览器 reset 中可能不会变，虽然这里 onload 会设置，但为了严谨）
+           
             displayCurrentDate();
           }, 100);
         }
